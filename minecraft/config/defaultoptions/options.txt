@@ -1,0 +1,2 @@
+resourcePacks:["vanilla","fabric","mod_resources","continuity:default","continuity:glass_pane_culling_fix","file/Unique Dark - Lite - 1.20.2-1.21.x.zip"]
+lang:ru_ru
