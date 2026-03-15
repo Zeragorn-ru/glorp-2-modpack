@@ -1,0 +1,10 @@
+{
+"dependencies": {
+"minecraft":"1.21.1",
+"neoforge":"21.1.217"
+},
+"files":[],
+"formatVersion": 1,
+"game": "minecraft",
+"name": "DustPack"
+}

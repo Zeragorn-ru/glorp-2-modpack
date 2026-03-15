@@ -1,0 +1,38 @@
+name: mrpack auto release
+
+on:
+  push:
+    tags:
+      - "v*.*.*-Release"
+  workflow_dispatch:
+    inputs:
+        tag:
+          description: 'Tag to release'
+          required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set tag
+      id: set_tag
+      run: |
+        if [ "${GITHUB_EVENT_NAME}" = "workflow_dispatch" ]; then
+          echo "TAG=${{ github.event.inputs.tag }}" >> $GITHUB_ENV
+        else
+          echo "TAG=${GITHUB_REF_NAME}" >> $GITHUB_ENV
+        fi
+
+    - name: Create mrpack
+      run: |
+        zip -rX dustpack.mrpack instance.cfg modrinth.index.json ./minecraft/updater.jar
+        zip -qrX update.zip minecraft
+
+    - name: Create Release
+      uses: ncipollo/release-action@v1
+      with:
+        tag: ${{ env.TAG  }}
+        name: ${{ env.TAG }}
+        artifacts: "dustpack.mrpack,removes.txt,update.zip"
