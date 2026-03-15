@@ -1,2 +1,4 @@
-resourcePacks:["vanilla","fabric","mod_resources","continuity:default","continuity:glass_pane_culling_fix","file/Unique Dark - Lite - 1.20.2-1.21.x.zip"]
+resourcePacks:["vanilla","fabric","mod_resources","continuity:default","continuity:glass_pane_culling_fix","file/BACAP Better RU 2.3.zip","file/BACAP Language Pack 1.19.zip"]
 lang:ru_ru
+guiScale:2
+soundCategory_music:0.0
