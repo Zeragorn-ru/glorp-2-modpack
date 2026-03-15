@@ -30,7 +30,7 @@ jobs:
 
     - name: Create mrpack
       run: |
-        zip -rX glorp-2.mrpack instance.cfg modrinth.index.json ./minecraft/updater.jar
+        zip -rX glorp-2.mrpack mmc-pack.json instance.cfg modrinth.index.json ./minecraft/updater.jar
         zip -qrX update.zip minecraft
 
     - name: Create Release
