@@ -1,1 +1,2 @@
 config/fancymenu
+updater.jar
